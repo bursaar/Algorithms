@@ -1,12 +1,12 @@
 // Algorithms.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 
 #include <iostream>
 #include "Maze.h"
 #include "Pathfinder.h"
 #include "Interface.h"
+#include <tchar.h>
 
 using namespace std;
 
