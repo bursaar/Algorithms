@@ -82,14 +82,12 @@
     <ClInclude Include="Maze.h" />
     <ClInclude Include="nodes.h" />
     <ClInclude Include="Pathfinder.h" />
-    <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algorithms.cpp" />
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Maze.cpp" />
-    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
