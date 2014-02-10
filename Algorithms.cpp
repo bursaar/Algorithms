@@ -12,6 +12,7 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+
 	cout << "MAZE RUNNER";
 	SkipLine(3);
 	cout << "Created by Ben Keenan";
@@ -32,7 +33,6 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	int choice;		// Menu choice from the start of the program.
 	cin >> choice;
-	system("CLS");
 
 	if (choice == 2) {
 
@@ -51,7 +51,6 @@ int _tmain(int argc, _TCHAR* argv[])
 		SkipLine();
 
 		getchar();
-		system("CLS");
 
 		// Print proper values of maze.
 		// =========================
@@ -59,7 +58,6 @@ int _tmain(int argc, _TCHAR* argv[])
 		SkipLine();
 
 		getchar();
-		system("CLS");
 
 		// Perform pathfinding pass.
 		// =========================
@@ -85,7 +83,6 @@ int _tmain(int argc, _TCHAR* argv[])
 		SkipLine();
 
 		getchar();
-		system("CLS");
 
 		cout << "These are the moves available at ";
 
