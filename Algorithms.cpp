@@ -7,6 +7,7 @@
 #include "Pathfinder.h"
 #include "Interface.h"
 #include <tchar.h>
+#include "StateManager.h"
 
 using namespace std;
 
