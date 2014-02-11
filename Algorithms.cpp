@@ -41,7 +41,11 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	if (choice == 4)
 	{	
-		std::ifstream arrayData("TestLevel.txt");
+		cout << "Type filename:" << endl;
+		string filename = "TestLevel.txt";
+		cin >> filename;
+
+		std::ifstream arrayData(filename);
 
 		int arrayIndex = 0;
 		bool LevelOneReadCode[338];
@@ -75,7 +79,10 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	if (choice == 3)
 	{
-		std::fstream arrayData("TestLevel.txt", std::ios::app);
+		cout << "Please choose a filename, names are case-sensitive." << endl << "Filename: ";
+		string filename;
+		cin >> filename;
+		std::fstream arrayData(filename, std::ios::app);
 
 		int arrayIndex = 0;
 
