@@ -1,5 +1,9 @@
-// Algorithms.cpp : Defines the entry point for the console application.
-//
+// =============================================================== //
+//                            Train2Game						   //
+//																   //
+//                    Game Developer Portfolio 1                   //
+//                            Project 2							   //
+
 
 
 #include <iostream>
