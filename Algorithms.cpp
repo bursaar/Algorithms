@@ -8,6 +8,7 @@
 #include "Interface.h"
 #include <tchar.h>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -39,23 +40,42 @@ int _tmain(int argc, _TCHAR* argv[])
 	bool LevelOneCode[338] = { 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
 	if (choice == 4)
-	{
-		std::fstream arrayData("ArrayData.txt", std::ios::in);
+	{	
+		std::ifstream arrayData("TestLevel.txt");
 
 		int arrayIndex = 0;
 		bool LevelOneReadCode[338];
+		string line;
 
-		while (arrayIndex < 338)
+		if (arrayData.is_open())
 		{
-			LevelOneReadCode[arrayIndex] = arrayData.std::ios::getloc(arrayIndex);
-			arrayIndex++;
+			while (getline (arrayData, line) )
+			{
+				if (line == "0")
+				{
+					LevelOneReadCode[arrayIndex] = 0;
+					arrayIndex++;
+				}
+				if (line == "1")
+				{
+					LevelOneReadCode[arrayIndex] = 1;
+					arrayIndex++;
+				}
+			}
+			arrayData.close();
+
+			cMaze TestMaze(LevelOneReadCode);
+			cPathfinder SolveTestMaze;
+			SolveTestMaze.create(TestMaze);
+			SolveTestMaze.print();
+
+			cin >> arrayIndex;	// Temporary TODO remove.
 		}
 	}
 
 	if (choice == 3)
 	{
-
-		std::ofstream arrayData("ArrayData.txt", std::ios::app);
+		std::fstream arrayData("TestLevel.txt", std::ios::app);
 
 		int arrayIndex = 0;
 
